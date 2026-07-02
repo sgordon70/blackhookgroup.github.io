@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackhook Group</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+            background-color: #F0EDE4; /* Exact cream background from your logo */
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            font-weight: normal;
+        }
+        h2 {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 0.5rem;
+            margin-top: 3.5rem;
+            font-weight: normal;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+            .info-grid { grid-template-columns: 1fr; gap: 1rem; }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        input, textarea {
+            background-color: transparent;
+            border: 1px solid #000000;
+            padding: 0.8rem;
+            font-family: inherit;
+            font-size: 1rem;
+            color: #000000;
+            border-radius: 0;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus {
+            outline: 1px solid #000000;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+        button {
+            background-color: #000000;
+            color: #F0EDE4;
+            border: none;
+            padding: 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        button:hover {
+            opacity: 0.85;
+        }
+        footer {
+            text-align: center;
+            margin-top: 6rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Blackhook Group Logo" class="logo-img">
+            <h1>Blackhook Group</h1>
+        </header>
+
+        <section>
+            <h2>Overview</h2>
+            <p>Blackhook Group is an independent corporate entity focusing on digital architecture, software engineering, and mobile ecosystem solutions. We deliver intentional and robust technological solutions built for global delivery platforms.</p>
+        </section>
+
+        <section>
+            <h2>Corporate Status</h2>
+            <div class="info-grid">
+                <div>
+                    <strong>Legal Entity Name</strong>
+                    <p>Blackhook Group</p>
+                </div>
+                <div>
+                    <strong>Principal Location</strong>
+                    <p>Nashville, TN</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <form action="https://formspree.io/f/xoqgkyre" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <input type="hidden" name="_to" value="scott@blackhookgroup.com">
+                <input type="hidden" name="_subject" value="Blackhook Group - Web Inquiry">
+                
+                <button type="submit">Submit Inquiry</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Blackhook Group. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
