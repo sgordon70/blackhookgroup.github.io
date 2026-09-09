@@ -1,0 +1,264 @@
+<title>Wasteclock Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #faf6ec;
+    --ink: #23262b;
+    --ink-soft: #5b5f6a;
+    --indigo: #1e2a45;
+    --amber: #3e7bfa;
+    --amber-ink: #2f6fed;
+    --success: #4c8c6b;
+    --alert: #c1543a;
+    --line: #e4ddcc;
+    --card-bg: #ffffff;
+
+    --font-display: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1c1e22;
+      --ink: #f5f1e8;
+      --ink-soft: #b8b3a6;
+      --indigo: #3a4c74;
+      --amber: #4f8dff;
+      --amber-ink: #7fabff;
+      --success: #6fae8b;
+      --alert: #e2735a;
+      --line: #34363c;
+      --card-bg: #24262b;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1c1e22;
+    --ink: #f5f1e8;
+    --ink-soft: #b8b3a6;
+    --indigo: #3a4c74;
+    --amber: #4f8dff;
+    --amber-ink: #7fabff;
+    --success: #6fae8b;
+    --alert: #e2735a;
+    --line: #34363c;
+    --card-bg: #24262b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--amber-ink); text-decoration-color: color-mix(in srgb, var(--amber-ink) 45%, transparent); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--amber-ink); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 2.9rem);
+    line-height: 1.08;
+    margin: 18px 0 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 40px 0 56px;
+  }
+
+  .contact-card .label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+
+  .contact-card .email {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .contact-card a.button {
+    display: inline-block;
+    background: var(--amber);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+  }
+
+  .contact-card a.button:hover { background: var(--amber-ink); }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 56px 0 20px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+
+  .faq-item:first-of-type { border-top: 1px solid var(--line); }
+
+  .faq-item h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+
+  .faq-item p {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .faq-item p + p { margin-top: 10px; }
+
+  .faq-item a { color: var(--amber-ink); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  footer p { margin: 0 0 8px; }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <span class="wordmark">Wasteclock</span><br>
+      <span class="tagline">the real-time cost of a meeting</span>
+    </div>
+    <h1>Support</h1>
+    <p class="dek">Answers to common questions, and a real person to write to if you need more.</p>
+  </header>
+
+  <div class="contact-card">
+    <div>
+      <p class="label">Email us directly</p>
+      <p class="email">hello@blackhookgroup.com</p>
+    </div>
+    <a class="button" href="mailto:hello@blackhookgroup.com">Contact Support</a>
+  </div>
+
+  <h2>Getting started</h2>
+
+  <div class="faq-item">
+    <h3>How does Wasteclock calculate cost?</h3>
+    <p>Set the headcount and a rate (either an hourly wage, or an annual salary — which Wasteclock converts to hourly by dividing by 2,080, the standard work-year hours), then tap Start. The dollar figure climbs in real time based on headcount × rate × elapsed time, rounded to the nearest whole dollar.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I change the headcount or rate while a meeting is running?</h3>
+    <p>Yes. Tap either pill below the dollar figure to expand that slider and adjust it inline — the timer keeps running the whole time.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What happens if I leave the app mid-meeting?</h3>
+    <p>Wasteclock automatically pauses the timer when the app is backgrounded. When you come back, it stays paused — tap the play button to resume. This is deliberate, so a stray notification or phone call never quietly inflates your total.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does resetting a meeting ask me to confirm?</h3>
+    <p>Only once you're more than 30 seconds or $10 into a meeting — under that, Reset clears instantly with no prompt. Either way, Reset keeps your last-used headcount and rate for next time; it just won't restart a meeting that's already underway.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What does the Share button do?</h3>
+    <p>Tap it any time — mid-meeting or after — to bring up the iOS share sheet with a plain-text summary (total cost, duration, headcount, and rate) you can send anywhere.</p>
+  </div>
+
+  <h2>Billing</h2>
+
+  <div class="faq-item">
+    <h3>Is Wasteclock a subscription?</h3>
+    <p>No. Wasteclock is a one-time purchase — pay once, keep it forever. There are no subscriptions, no in-app purchases, and no ads.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I get a refund?</h3>
+    <p>Refunds are handled by Apple, not by us directly. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> or via Settings &gt; [your name] &gt; Media &amp; Purchases &gt; My Purchases on your iPhone.</p>
+  </div>
+
+  <h2>Privacy</h2>
+
+  <div class="faq-item">
+    <h3>Does Wasteclock collect any data?</h3>
+    <p>No — nothing leaves your device. There's no backend, no accounts, and no analytics. Full details are in our <a href="https://blackhookgroup.com/wasteclock/privacy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <footer>
+    <p>© 2026 Blackhook Group LLC.</p>
+    <p>Still stuck? Email <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a> and we'll get back to you.</p>
+  </footer>
+
+</div>
