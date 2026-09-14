@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackhook Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --black: #000000;
+            --black-soft: #0D0D0E;
+            --silver-bright: #F1F2F4;
+            --silver: #ADB2B9;
+            --silver-dim: #55585E;
+            --white: #FAFAFA;
+        }
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
             margin: 0;
             padding: 0;
-            color: #000000;
-            background-color: #F0EDE4; /* Exact cream background from your logo */
+            color: var(--white);
+            background: var(--black);
+            min-height: 100vh;
         }
         .container {
             max-width: 650px;
@@ -23,29 +35,44 @@
             margin-bottom: 4rem;
         }
         .logo-img {
-            max-width: 180px;
+            max-width: 220px;
             height: auto;
             margin-bottom: 1.5rem;
         }
         h1 {
-            font-size: 2rem;
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin: 0;
-            font-weight: normal;
+            font-weight: 500;
+            color: var(--silver);
         }
         h2 {
-            font-size: 1.3rem;
+            font-family: 'Michroma', sans-serif;
+            font-size: 1.05rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #000000;
-            padding-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            color: var(--silver-bright);
+            border-bottom: 1px solid var(--silver-dim);
+            padding-bottom: 0.8rem;
             margin-top: 3.5rem;
-            font-weight: normal;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 48px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--silver-bright), transparent);
         }
         p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-top: 0.5rem;
+            color: var(--silver);
         }
         .info-grid {
             display: grid;
@@ -55,6 +82,14 @@
         }
         @media (max-width: 600px) {
             .info-grid { grid-template-columns: 1fr; gap: 1rem; }
+        }
+        strong {
+            color: var(--silver-bright);
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
         form {
             display: flex;
@@ -68,33 +103,37 @@
             gap: 0.5rem;
         }
         label {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: var(--silver);
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-weight: 600;
         }
         input, textarea {
-            background-color: transparent;
-            border: 1px solid #000000;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--silver-dim);
             padding: 0.8rem;
-            font-family: inherit;
+            font-family: 'Barlow', sans-serif;
             font-size: 1rem;
-            color: #000000;
+            color: var(--white);
             border-radius: 0;
             box-sizing: border-box;
         }
         input:focus, textarea:focus {
-            outline: 1px solid #000000;
-            background-color: rgba(0, 0, 0, 0.02);
+            outline: 1px solid var(--silver-bright);
+            background-color: rgba(255, 255, 255, 0.06);
         }
         button {
-            background-color: #000000;
-            color: #F0EDE4;
+            background: linear-gradient(135deg, var(--silver-bright), var(--silver-dim));
+            color: var(--black);
             border: none;
             padding: 1rem;
-            font-family: inherit;
-            font-size: 1rem;
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             cursor: pointer;
             margin-top: 0.5rem;
         }
@@ -104,10 +143,10 @@
         footer {
             text-align: center;
             margin-top: 6rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.6;
+            letter-spacing: 1.5px;
+            color: var(--silver-dim);
         }
     </style>
 </head>
@@ -115,8 +154,8 @@
 
     <div class="container">
         <header>
-            <img src="logo.png" alt="Blackhook Group Logo" class="logo-img">
-            <h1>Blackhook Group</h1>
+            <img src="logo.jpg" alt="Blackhook Group Logo" class="logo-img">
+            <h1>Digital Architecture &amp; Engineering</h1>
         </header>
 
         <section>
@@ -140,7 +179,7 @@
 
         <section>
             <h2>Contact</h2>
-            <form action="https://formspree.io/f/mlgyobaz" method="POST">
+            <form action="https://formspree.io/f/xoqgkyre" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -156,6 +195,7 @@
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 
+                <input type="hidden" name="_to" value="scott@blackhookgroup.com">
                 <input type="hidden" name="_subject" value="Blackhook Group - Web Inquiry">
                 
                 <button type="submit">Submit Inquiry</button>
