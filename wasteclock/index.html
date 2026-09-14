@@ -1,0 +1,272 @@
+<title>Wasteclock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #faf6ec;
+    --ink: #23262b;
+    --ink-soft: #5b5f6a;
+    --indigo: #1e2a45;
+    --amber: #3e7bfa;
+    --amber-ink: #2f6fed;
+    --success: #4c8c6b;
+    --alert: #c1543a;
+    --line: #e4ddcc;
+    --card-bg: #ffffff;
+
+    --font-display: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1c1e22;
+      --ink: #f5f1e8;
+      --ink-soft: #b8b3a6;
+      --indigo: #3a4c74;
+      --amber: #4f8dff;
+      --amber-ink: #7fabff;
+      --success: #6fae8b;
+      --alert: #e2735a;
+      --line: #34363c;
+      --card-bg: #24262b;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1c1e22;
+    --ink: #f5f1e8;
+    --ink-soft: #b8b3a6;
+    --indigo: #3a4c74;
+    --amber: #4f8dff;
+    --amber-ink: #7fabff;
+    --success: #6fae8b;
+    --alert: #e2735a;
+    --line: #34363c;
+    --card-bg: #24262b;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--amber-ink); text-decoration-color: color-mix(in srgb, var(--amber-ink) 45%, transparent); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--amber-ink); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 2.9rem);
+    line-height: 1.08;
+    margin: 18px 0 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .hero-number {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(3.5rem, 12vw, 5.5rem);
+    color: var(--alert);
+    letter-spacing: -0.02em;
+    margin: 32px 0 0;
+    line-height: 1;
+  }
+
+  .hero-caption {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 40px 0 8px;
+  }
+
+  .store-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease, transform 0.1s ease;
+  }
+
+  .store-button:hover {
+    border-color: var(--amber-ink);
+    transform: translateY(-1px);
+  }
+
+  .store-button .icon {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    color: var(--ink);
+  }
+
+  .store-button .label-group {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .store-button .eyebrow {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+  }
+
+  .store-button .store-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  .price-line {
+    margin-top: 28px;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+
+  .price-line strong {
+    color: var(--ink);
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 64px 0 16px;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-list li {
+    border-top: 1px solid var(--line);
+    padding: 18px 0;
+    color: var(--ink-soft);
+  }
+
+  .feature-list li:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .feature-list strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  footer p { margin: 0 0 8px; }
+  footer a { color: var(--ink-soft); }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <span class="wordmark">Wasteclock</span><br>
+      <span class="tagline">the real-time cost of a meeting</span>
+    </div>
+    <h1>Every meeting has a price tag. Now you can see it.</h1>
+    <p class="dek">Set your headcount and rate, tap Start, and watch the real dollar cost of the meeting climb live on screen.</p>
+  </header>
+
+  <div class="hero-number">$847.</div>
+  <p class="hero-caption">and climbing.</p>
+
+  <div class="store-buttons">
+    <a class="store-button" href="https://apps.apple.com/app/id6810376703">
+      <svg class="icon" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+      <span class="label-group">
+        <span class="eyebrow">Download on the</span>
+        <span class="store-name">App Store</span>
+      </span>
+    </a>
+    <a class="store-button" href="https://play.google.com/store/apps/details?id=com.scottgordon.wasteclock">
+      <svg class="icon" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+      <span class="label-group">
+        <span class="eyebrow">Get it on</span>
+        <span class="store-name">Google Play</span>
+      </span>
+    </a>
+  </div>
+
+  <p class="price-line"><strong>$2.99 once.</strong> No subscriptions. No ads. No accounts.</p>
+
+  <h2>How it works</h2>
+  <ul class="feature-list">
+    <li><strong>Set headcount and rate</strong> &mdash; hourly or salary, Wasteclock converts either into a live per-second cost.</li>
+    <li><strong>Tap Start.</strong> The dollar figure climbs in real time as the meeting runs, right alongside the elapsed timer.</li>
+    <li><strong>Adjust on the fly</strong> &mdash; tap either pill mid-meeting to change headcount or rate without losing your place.</li>
+    <li><strong>Share the total</strong> &mdash; one tap brings up a plain-text summary you can send anywhere.</li>
+  </ul>
+
+  <footer>
+    <p>&copy; 2026 Blackhook Group LLC.</p>
+    <p><a href="https://blackhookgroup.com/wasteclock/support.html">Support</a> &middot; <a href="https://blackhookgroup.com/wasteclock/privacy.html">Privacy Policy</a></p>
+  </footer>
+
+</div>
