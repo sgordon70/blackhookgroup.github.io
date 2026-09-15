@@ -1,4 +1,4 @@
-<title>Wasteclock</title>
+<title>Wasteclock for Slack</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -108,73 +108,91 @@
     max-width: 46ch;
   }
 
-  .hero-number {
+  /* --- Slack message mockup, standing in for the app-store hero number --- */
+  .slack-mock {
+    margin: 32px 0 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    max-width: 420px;
+  }
+
+  .slack-mock .pin-line {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .slack-mock .cost-line {
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: clamp(3.5rem, 12vw, 5.5rem);
+    font-size: 1.8rem;
     color: var(--alert);
-    letter-spacing: -0.02em;
-    margin: 32px 0 0;
-    line-height: 1;
+  }
+
+  .slack-mock .cost-line .dot {
+    color: var(--success);
+    font-size: 1.1rem;
+  }
+
+  .slack-mock .meta-line {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 8px;
+  }
+
+  .slack-mock .buttons-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+
+  .slack-mock .fake-btn {
+    font-size: 0.8rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 5px 12px;
+    color: var(--ink-soft);
   }
 
   .hero-caption {
     font-size: 0.95rem;
     color: var(--ink-soft);
-    margin-top: 8px;
+    margin-top: 12px;
   }
 
-  .store-buttons {
+  .cta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
-    margin: 40px 0 8px;
+    align-items: center;
+    gap: 16px;
+    margin: 36px 0 8px;
   }
 
-  .store-button {
-    display: flex;
+  .add-to-slack {
+    display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--card-bg);
-    border: 1px solid var(--line);
+    background: var(--ink);
+    color: var(--paper);
     border-radius: 10px;
-    padding: 12px 20px;
+    padding: 13px 22px;
     text-decoration: none;
-    color: var(--ink);
-    transition: border-color 0.15s ease, transform 0.1s ease;
-  }
-
-  .store-button:hover {
-    border-color: var(--amber-ink);
-    transform: translateY(-1px);
-  }
-
-  .store-button .icon {
-    width: 24px;
-    height: 24px;
-    flex: none;
-    color: var(--ink);
-  }
-
-  .store-button .label-group {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-  }
-
-  .store-button .eyebrow {
-    font-size: 0.7rem;
-    color: var(--ink-soft);
-  }
-
-  .store-button .store-name {
-    font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.05rem;
+    transition: transform 0.1s ease, opacity 0.15s ease;
   }
+
+  .add-to-slack:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
+
+  .add-to-slack svg { width: 20px; height: 20px; flex: none; }
 
   .price-line {
-    margin-top: 28px;
+    margin-top: 4px;
     font-size: 0.95rem;
     color: var(--ink-soft);
   }
@@ -239,45 +257,44 @@
 
   <header class="masthead">
     <div>
-      <span class="wordmark">Wasteclock</span><br>
-      <span class="tagline">the real-time cost of a meeting</span>
+      <span class="wordmark">Wasteclock for Slack</span><br>
+      <span class="tagline">the real-time cost of a meeting, live in the channel</span>
     </div>
-    <h1>Every meeting has a price tag. Now you can see it.</h1>
-    <p class="dek">Set your headcount and rate, tap Start, and watch the real dollar cost of the meeting climb live on screen.</p>
+    <h1>Every meeting has a price tag. Now your whole channel can see it.</h1>
+    <p class="dek">Set your headcount and rate, run <code>/wasteclock</code>, and watch the dollar cost climb live &mdash; pinned in the channel for the whole meeting.</p>
   </header>
 
-  <div class="hero-number">$847.</div>
-  <p class="hero-caption">and climbing.</p>
+  <div class="slack-mock">
+    <div class="pin-line">📌 <strong>Wasteclock</strong> &mdash; check Pinned items to find this anytime</div>
+    <div class="cost-line"><span class="dot">🔴</span> $412 &mdash; 38:12</div>
+    <div class="meta-line">6 people @ $65/hr avg.</div>
+    <div class="buttons-row">
+      <span class="fake-btn">Pause</span>
+      <span class="fake-btn">Reset</span>
+      <span class="fake-btn">Share</span>
+      <span class="fake-btn">Edit settings</span>
+    </div>
+  </div>
+  <p class="hero-caption">and climbing, for everyone in the channel to see.</p>
 
-  <div class="store-buttons">
-    <a class="store-button" href="https://apps.apple.com/app/id6810376703">
-      <svg class="icon" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-      <span class="label-group">
-        <span class="eyebrow">Download on the</span>
-        <span class="store-name">App Store</span>
-      </span>
-    </a>
-    <a class="store-button" href="https://play.google.com/store/apps/details?id=com.scottgordon.wasteclock">
-      <svg class="icon" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-      <span class="label-group">
-        <span class="eyebrow">Get it on</span>
-        <span class="store-name">Google Play</span>
-      </span>
+  <div class="cta-row">
+    <a class="add-to-slack" href="https://wasteclock-slack.onrender.com/slack/install">
+      <svg viewBox="0 0 122.8 122.8" aria-hidden="true"><path fill="#e01e5a" d="M25.8 77.6c0 7.1-5.8 12.9-12.9 12.9S0 84.7 0 77.6s5.8-12.9 12.9-12.9h12.9v12.9zm6.5 0c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9v32.3c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V77.6z"/><path fill="#36c5f0" d="M45.2 25.8c-7.1 0-12.9-5.8-12.9-12.9S38.1 0 45.2 0s12.9 5.8 12.9 12.9v12.9H45.2zm0 6.5c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H12.9C5.8 58.1 0 52.3 0 45.2s5.8-12.9 12.9-12.9h32.3z"/><path fill="#2eb67d" d="M97 45.2c0-7.1 5.8-12.9 12.9-12.9s12.9 5.8 12.9 12.9-5.8 12.9-12.9 12.9H97V45.2zm-6.5 0c0 7.1-5.8 12.9-12.9 12.9s-12.9-5.8-12.9-12.9V12.9C64.7 5.8 70.5 0 77.6 0s12.9 5.8 12.9 12.9v32.3z"/><path fill="#ecb22e" d="M77.6 97c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9-12.9-5.8-12.9-12.9V97h12.9zm0-6.5c-7.1 0-12.9-5.8-12.9-12.9s5.8-12.9 12.9-12.9h32.3c7.1 0 12.9 5.8 12.9 12.9s-5.8 12.9-12.9 12.9H77.6z"/></svg>
+      Add to Slack
     </a>
   </div>
-
-  <p class="price-line"><strong>$2.99 once.</strong> No subscriptions. No ads. No accounts.</p>
+  <p class="price-line"><strong>14 days free.</strong> Then $19/month per workspace. Cancel anytime.</p>
 
   <h2>How it works</h2>
   <ul class="feature-list">
-    <li><strong>Set headcount and rate</strong> &mdash; hourly or salary, Wasteclock converts either into a live per-second cost.</li>
-    <li><strong>Tap Start.</strong> The dollar figure climbs in real time as the meeting runs, right alongside the elapsed timer.</li>
-    <li><strong>Adjust on the fly</strong> &mdash; tap either pill mid-meeting to change headcount or rate without losing your place.</li>
-    <li><strong>Share the total</strong> &mdash; one tap brings up a plain-text summary you can send anywhere.</li>
+    <li><strong>Run <code>/wasteclock</code></strong> &mdash; set headcount and rate (hourly or salary) in a quick setup form.</li>
+    <li><strong>Hit Start.</strong> A live message posts and pins itself, ticking up every few seconds for the whole channel to see.</li>
+    <li><strong>Anyone can control it</strong> &mdash; pause, resume, or reset right from the message, no re-running the command.</li>
+    <li><strong>Share the total</strong> &mdash; one click posts a clean summary anyone can read.</li>
   </ul>
 
   <div class="cross-link">
-    On a team? Wasteclock also runs <strong>right inside Slack</strong> &mdash; a live, pinned cost tracker the whole channel can see. <a href="https://blackhookgroup.com/wasteclock/slack.html">Add it to your workspace &rarr;</a>
+    Also on your phone: Wasteclock is a <strong>$2.99 one-time</strong> iPhone &amp; Android app for tracking a single meeting's cost live &mdash; no Slack required. <a href="https://blackhookgroup.com/wasteclock/">See the app &rarr;</a>
   </div>
 
   <footer>
