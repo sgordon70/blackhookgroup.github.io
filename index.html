@@ -66,11 +66,18 @@
         }
         .telemetry {
             position: fixed;
-            font-family: 'Courier New', monospace;
+            font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', monospace;
             font-size: 11px;
-            letter-spacing: 0.1em;
-            color: #3F3F46;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #71717A;
+            opacity: 0.75;
             margin: 0;
+            transition: opacity 0.2s ease;
+        }
+        .telemetry:hover {
+            opacity: 1;
+            color: #A1A1AA;
         }
         #status-corner {
             top: 32px;
