@@ -15,6 +15,7 @@
             --silver: #ADB2B9;
             --silver-dim: #55585E;
             --white: #FAFAFA;
+            --zinc: #71717A;
         }
         body {
             font-family: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
@@ -38,6 +39,7 @@
             width: 100%;
             height: auto;
             margin-bottom: 3rem;
+            opacity: 1;
         }
         .lockup {
             display: flex;
@@ -45,47 +47,58 @@
             align-items: center;
             gap: 0.6rem;
         }
-        .status-line {
-            font-family: 'Courier New', monospace;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-            color: #71717A;
-            margin: 0;
-        }
         h2 {
             font-family: 'Michroma', sans-serif;
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 400;
-            color: var(--silver-bright);
+            color: var(--zinc);
+            opacity: 0.4;
             margin: 0;
         }
         .transmit {
             font-family: 'Courier New', monospace;
             font-size: 1rem;
-            color: var(--silver-bright);
             letter-spacing: 0.5px;
             margin: 0;
         }
+        .transmit .prefix {
+            color: var(--zinc);
+            opacity: 0.4;
+        }
         .transmit a {
-            color: var(--silver-bright);
+            color: var(--white);
+            opacity: 0.78;
             text-decoration: none;
             border-bottom: 1px solid var(--silver-dim);
         }
         .transmit a:hover {
+            opacity: 1;
             border-bottom-color: var(--silver-bright);
         }
-        .meta {
+        .telemetry {
             position: fixed;
-            left: 1.25rem;
-            bottom: 1rem;
-            text-align: left;
-            font-size: 0.6rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
             letter-spacing: 0.5px;
-            color: var(--silver-dim);
+            color: var(--zinc);
+            opacity: 0.4;
+            margin: 0;
         }
-        .meta p {
+        .telemetry:hover {
+            opacity: 0.8;
+        }
+        #status-corner {
+            top: 24px;
+            left: 24px;
+        }
+        #time-corner {
+            bottom: 24px;
+            right: 24px;
+            text-align: right;
+        }
+        #time-corner p {
             margin: 0;
         }
     </style>
@@ -95,13 +108,14 @@
     <div class="hero">
         <img src="logo.jpg" alt="Blackhook Group Logo" class="logo-img">
         <div class="lockup">
-            <p class="status-line">// SYSTEM STATUS: OPERATIONAL</p>
             <h2>Contact</h2>
-            <p class="transmit">// TRANSMIT TO: <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a></p>
+            <p class="transmit"><span class="prefix">// TRANSMIT TO: </span><a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a></p>
         </div>
     </div>
 
-    <div class="meta">
+    <p class="telemetry" id="status-corner">// SYSTEM STATUS: OPERATIONAL</p>
+
+    <div class="telemetry" id="time-corner">
         <p>&copy; Blackhook Group.</p>
         <p>// SYS.TIME: <span id="sys-time"></span></p>
     </div>
