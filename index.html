@@ -91,6 +91,18 @@
             bottom: 32px;
             right: 32px;
         }
+        .hud-top-right {
+            position: fixed;
+            top: 32px;
+            right: 32px;
+            color: #52525B;
+            font-family: 'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            user-select: none;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -107,6 +119,8 @@
     <p class="telemetry" id="copyright-corner">&copy; Blackhook Group.</p>
 
     <p class="telemetry" id="time-corner">// SYS.TIME: <span id="sys-time"></span></p>
+
+    <div class="hud-top-right">// BURN RATE: ZERO</div>
 
     <script>
         function updateSysTime() {
