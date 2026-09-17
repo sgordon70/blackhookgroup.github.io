@@ -47,59 +47,42 @@
             align-items: center;
             gap: 0.6rem;
         }
-        h2 {
-            font-family: 'Michroma', sans-serif;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 400;
-            color: var(--zinc);
-            opacity: 0.4;
-            margin: 0;
-        }
         .transmit {
             font-family: 'Courier New', monospace;
             font-size: 1rem;
             letter-spacing: 0.5px;
-            margin: 0;
+            margin: 48px 0 0;
         }
         .transmit .prefix {
             color: var(--zinc);
-            opacity: 0.4;
         }
         .transmit a {
-            color: var(--white);
-            opacity: 0.78;
+            color: #FAFAFA;
             text-decoration: none;
             border-bottom: 1px solid var(--silver-dim);
         }
         .transmit a:hover {
-            opacity: 1;
             border-bottom-color: var(--silver-bright);
         }
         .telemetry {
             position: fixed;
             font-family: 'Courier New', monospace;
-            font-size: 0.7rem;
-            letter-spacing: 0.5px;
-            color: var(--zinc);
-            opacity: 0.4;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            color: #3F3F46;
             margin: 0;
-        }
-        .telemetry:hover {
-            opacity: 0.8;
         }
         #status-corner {
-            top: 24px;
-            left: 24px;
+            top: 32px;
+            left: 32px;
+        }
+        #copyright-corner {
+            bottom: 32px;
+            left: 32px;
         }
         #time-corner {
-            bottom: 24px;
-            right: 24px;
-            text-align: right;
-        }
-        #time-corner p {
-            margin: 0;
+            bottom: 32px;
+            right: 32px;
         }
     </style>
 </head>
@@ -108,17 +91,15 @@
     <div class="hero">
         <img src="logo.jpg" alt="Blackhook Group Logo" class="logo-img">
         <div class="lockup">
-            <h2>Contact</h2>
             <p class="transmit"><span class="prefix">// TRANSMIT TO: </span><a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a></p>
         </div>
     </div>
 
     <p class="telemetry" id="status-corner">// SYSTEM STATUS: OPERATIONAL</p>
 
-    <div class="telemetry" id="time-corner">
-        <p>&copy; Blackhook Group.</p>
-        <p>// SYS.TIME: <span id="sys-time"></span></p>
-    </div>
+    <p class="telemetry" id="copyright-corner">&copy; Blackhook Group.</p>
+
+    <p class="telemetry" id="time-corner">// SYS.TIME: <span id="sys-time"></span></p>
 
     <script>
         function updateSysTime() {
