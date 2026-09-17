@@ -24,59 +24,49 @@
             color: var(--white);
             background: var(--black);
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .container {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-        header {
+        .hero {
             text-align: center;
-            margin-bottom: 4rem;
+            padding: 3rem 1.5rem;
+            max-width: 650px;
         }
         .logo-img {
             max-width: 420px;
             width: 100%;
             height: auto;
-            margin-bottom: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .lockup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
         }
         .status-line {
             font-family: 'Courier New', monospace;
             font-size: 0.75rem;
             letter-spacing: 0.5px;
             color: #71717A;
-        }
-        h1 {
-            font-family: 'Barlow Semi Condensed', sans-serif;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
             margin: 0;
-            font-weight: 500;
-            color: var(--silver);
         }
         h2 {
             font-family: 'Michroma', sans-serif;
-            font-size: 1.05rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 400;
             color: var(--silver-bright);
-            margin-top: 3.5rem;
-        }
-        p {
-            font-size: 1.05rem;
-            margin-top: 0.5rem;
-            color: var(--silver);
-        }
-        section {
-            text-align: center;
+            margin: 0;
         }
         .transmit {
             font-family: 'Courier New', monospace;
             font-size: 1rem;
             color: var(--silver-bright);
             letter-spacing: 0.5px;
+            margin: 0;
         }
         .transmit a {
             color: var(--silver-bright);
@@ -86,33 +76,34 @@
         .transmit a:hover {
             border-bottom-color: var(--silver-bright);
         }
-        footer {
-            text-align: center;
-            margin-top: 6rem;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        .meta {
+            position: fixed;
+            left: 1.25rem;
+            bottom: 1rem;
+            text-align: left;
+            font-size: 0.6rem;
+            letter-spacing: 0.5px;
             color: var(--silver-dim);
+        }
+        .meta p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <img src="logo.jpg" alt="Blackhook Group Logo" class="logo-img">
+    <div class="hero">
+        <img src="logo.jpg" alt="Blackhook Group Logo" class="logo-img">
+        <div class="lockup">
             <p class="status-line">// SYSTEM STATUS: OPERATIONAL</p>
-        </header>
-
-        <section>
             <h2>Contact</h2>
             <p class="transmit">// TRANSMIT TO: <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a></p>
-        </section>
+        </div>
+    </div>
 
-        <footer>
-            <p>&copy; Blackhook Group.</p>
-            <p class="status-line">// SYS.TIME: <span id="sys-time"></span></p>
-        </footer>
+    <div class="meta">
+        <p>&copy; Blackhook Group.</p>
+        <p>// SYS.TIME: <span id="sys-time"></span></p>
     </div>
 
     <script>
