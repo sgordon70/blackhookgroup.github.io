@@ -56,41 +56,15 @@
             letter-spacing: 2px;
             font-weight: 400;
             color: var(--silver-bright);
-            border-bottom: 1px solid var(--silver-dim);
-            padding-bottom: 0.8rem;
             margin-top: 3.5rem;
-            position: relative;
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -1px;
-            width: 48px;
-            height: 1px;
-            background: linear-gradient(90deg, var(--silver-bright), transparent);
         }
         p {
             font-size: 1.05rem;
             margin-top: 0.5rem;
             color: var(--silver);
         }
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 1rem;
-        }
-        @media (max-width: 600px) {
-            .info-grid { grid-template-columns: 1fr; gap: 1rem; }
-        }
-        strong {
-            color: var(--silver-bright);
-            font-family: 'Barlow Semi Condensed', sans-serif;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
+        section {
+            text-align: center;
         }
         .transmit {
             font-family: 'Courier New', monospace;
