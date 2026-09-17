@@ -110,9 +110,18 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 Blackhook Group.</p>
+            <p>&copy; Blackhook Group.</p>
+            <p class="status-line">// SYS.TIME: <span id="sys-time"></span></p>
         </footer>
     </div>
 
+    <script>
+        function updateSysTime() {
+            var el = document.getElementById('sys-time');
+            if (el) el.textContent = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+        }
+        updateSysTime();
+        setInterval(updateSysTime, 1000);
+    </script>
 </body>
 </html>
