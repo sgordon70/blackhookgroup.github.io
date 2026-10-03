@@ -146,7 +146,7 @@
   }
 
   .summary li::before {
-    content: "—";
+    content: "•";
     position: absolute;
     left: 0;
     color: var(--amber);
@@ -257,115 +257,92 @@
   <header class="masthead">
     <div>
       <span class="wordmark">Roah</span><br>
-      <span class="tagline">to see, to look, to perceive — ra'ah (רָאָה)</span>
+      <span class="tagline">to see, to look, to perceive: ra'ah (רָאָה)</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="dek">A plain description of what Roah collects, why, and what stays on your device.</p>
-    <p class="meta">Last updated August 24, 2026</p>
+    <p class="dek">A plain description of what Roah does with your information. The short version: it all stays on your device.</p>
+    <p class="meta">Last updated October 3, 2026</p>
   </header>
 
   <div class="summary">
     <h2>In short</h2>
     <ul>
-      <li><strong>The pages you scan never leave your device.</strong> Roah reads text on-device; no photo or page image is ever uploaded.</li>
-      <li>What syncs is small: which <strong>words</strong> you tapped or replayed, grouped by category (like "name" or "long word") — not full sentences or page content.</li>
-      <li><strong>You don't need an account to use Roah.</strong> The camera, on-device text recognition, and word-highlighting — what we call Core Mode — work entirely on your phone, with no internet connection and nothing sent anywhere. Signing in only adds two things: syncing your struggle profile across your devices, and confirming an active Roah+ subscription.</li>
-      <li>We don't sell data, and there are no advertising or analytics trackers in Roah.</li>
+      <li><strong>Roah doesn't collect any data.</strong> There is no account, no sign-in, and no Roah server.</li>
+      <li><strong>Your pages never leave your device.</strong> Text is read from your photos on the device itself, and only the text is saved, on your device.</li>
+      <li>There are no ads, no analytics, and no trackers in Roah.</li>
     </ul>
   </div>
 
   <nav class="toc" aria-label="Sections">
-    <a href="#collect">What we collect</a>
     <a href="#device">What stays on your device</a>
-    <a href="#ai">Optional AI explanations</a>
-    <a href="#thirdparty">Who we share data with</a>
-    <a href="#retention">Retention &amp; deletion</a>
+    <a href="#apple">Purchases</a>
+    <a href="#permissions">Camera and photos</a>
+    <a href="#deletion">Deleting your data</a>
     <a href="#children">Children's privacy</a>
     <a href="#changes">Changes to this policy</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="collect">
-    <h2><span class="num">01</span> What we collect</h2>
-    <p>Roah's difficulty engine and personalization only need to know which <em>kinds</em> of words trip you up — not the pages you're reading. The data below is what actually syncs to Roah's backend when you're signed in.</p>
-    <div class="datatable-wrap">
-      <table class="datatable">
-        <tr><th>Data</th><th>What it includes</th><th>Why</th></tr>
-        <tr>
-          <td>Word interaction history</td>
-          <td>A tapped word, its category (e.g. "proper noun," "irregular spelling"), the action (tapped, replayed, or skipped), and a timestamp</td>
-          <td>Builds the "struggle profile" that quietly adjusts which words get highlighted for you over time</td>
-        </tr>
-        <tr>
-          <td>Struggle profile</td>
-          <td>A per-category score derived from the history above, which decays over time</td>
-          <td>Drives predictive highlighting — the core feature of the app</td>
-        </tr>
-        <tr>
-          <td>Subscription status</td>
-          <td>Platform (iOS), product, status, and expiration date</td>
-          <td>Confirms your Roah+ entitlement without re-checking the App Store every time</td>
-        </tr>
-      </table>
-    </div>
-    <p class="note">We don't collect your name, contacts, location, or anything from outside the app itself.</p>
-  </section>
-
   <section id="device">
-    <h2><span class="num">02</span> What stays on your device <span class="pill device-only">Never synced</span></h2>
-    <p>Every photo you capture and every word Roah recognizes is processed with Apple's on-device Vision framework. That image, and the full text of the page, never leaves your phone — not to Roah's backend, not to Apple, not to anyone. Only the word/category-level tap data described above is ever sent anywhere, and only once you're signed in.</p>
-    <p>Core Mode — the camera, OCR, and difficulty highlighting — works completely offline. Signing in only adds cross-device sync and Roah+ entitlement checks on top of that.</p>
-  </section>
-
-  <section id="ai">
-    <h2><span class="num">03</span> Optional AI explanations</h2>
-    <p>If you choose to paste your own Anthropic API key in Settings, tapping a word can request a plain-language explanation. That request goes directly from your device to Anthropic using your own key — it never passes through Roah's servers, and Roah never sees or stores your key or the words you've asked about. This feature is entirely optional and off by default.</p>
-  </section>
-
-  <section id="thirdparty">
-    <h2><span class="num">04</span> Who we share data with</h2>
+    <h2><span class="num">01</span> What stays on your device <span class="pill device-only">Never uploaded</span></h2>
+    <p>Everything Roah does happens on your iPhone or iPad:</p>
     <div class="datatable-wrap">
       <table class="datatable">
-        <tr><th>Party</th><th>What they see</th></tr>
+        <tr><th>Data</th><th>What it is</th><th>Why</th></tr>
         <tr>
-          <td>Our database provider (Google Firebase)</td>
-          <td>Word/category interaction history, struggle profile, and subscription status — protected so only you can access your own data</td>
+          <td>Your pages</td>
+          <td>The text of pages you scan, choose from Photos, or paste. Photos themselves are not saved.</td>
+          <td>So you can come back to a page later</td>
         </tr>
         <tr>
-          <td>Apple</td>
-          <td>Standard App Store purchase and device information Apple collects for any app, used to validate your Roah+ subscription</td>
+          <td>Tapped word types</td>
+          <td>A score for each kind of word you look up (like "name" or "long word"), which fades over time</td>
+          <td>So Roah can mark more of the kinds of words you find hard</td>
         </tr>
         <tr>
-          <td>Anthropic (only if you enable AI explanations)</td>
-          <td>The word you tapped and its surrounding sentence, sent directly using your own API key</td>
+          <td>Settings</td>
+          <td>Text size, how many words to mark, your chosen voice, and how many free pages you've used</td>
+          <td>So the app remembers your preferences</td>
         </tr>
       </table>
     </div>
-    <p>We don't use third-party advertising or analytics SDKs, and we don't sell or rent any data to anyone.</p>
+    <p class="note">None of this is sent to us or anyone else. Text recognition uses Apple's on-device Vision framework, and word pronunciation uses your device's built-in voices.</p>
   </section>
 
-  <section id="retention">
-    <h2><span class="num">05</span> Retention &amp; deletion</h2>
-    <p>Word interaction history is kept only as long as needed to compute your struggle profile, which itself decays automatically over time. You can request deletion of your account and all associated data at any point by contacting us below — we'll remove it within 30 days.</p>
+  <section id="apple">
+    <h2><span class="num">02</span> Purchases</h2>
+    <p>If you unlock Roah, the purchase is handled entirely by Apple through the App Store. Roah only asks the App Store on your device whether the unlock has been purchased. We never see your name, Apple ID, or payment details.</p>
+  </section>
+
+  <section id="permissions">
+    <h2><span class="num">03</span> Camera and photos</h2>
+    <p>Roah asks for camera access only so you can take a picture of a page. When you choose a photo, you pick exactly which one Roah can see. Photos are read on your device and are not stored or uploaded.</p>
+  </section>
+
+  <section id="deletion">
+    <h2><span class="num">04</span> Deleting your data</h2>
+    <p>Swipe left on a page in Roah to delete it. In Roah's Settings, "Forget tapped words" clears what Roah has learned. Deleting the app removes everything. Because nothing is stored on a server, there is nothing for us to delete on our side.</p>
   </section>
 
   <section id="children">
-    <h2><span class="num">06</span> Children's privacy</h2>
-    <p>Roah is intended for general readers and is not directed at children under 13. We don't knowingly collect data from children under 13; if you believe a child has created an account, contact us and we'll delete it.</p>
+    <h2><span class="num">05</span> Children's privacy</h2>
+    <p>Roah is made for general readers and doesn't collect data from anyone, including children.</p>
   </section>
 
   <section id="changes">
-    <h2><span class="num">07</span> Changes to this policy</h2>
-    <p>If what Roah collects changes in a future update, we'll update this page and adjust the "last updated" date above.</p>
+    <h2><span class="num">06</span> Changes to this policy</h2>
+    <p>If a future version of Roah changes how it handles data, we'll update this page and the date above before that version is released.</p>
   </section>
 
   <section id="contact">
-    <h2><span class="num">08</span> Contact</h2>
-    <p>Questions about this policy or a request to delete your data can go to <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a>.</p>
+    <h2><span class="num">07</span> Contact</h2>
+    <p>Questions about this policy can go to <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a>.</p>
   </section>
 
   <footer>
-    <p>© 2026 Blackhook Group LLC. This policy describes Roah's actual data handling as implemented in the app and backend.</p>
+    <p>© 2026 Blackhook Group LLC.</p>
   </footer>
 
 </div>
+</body>
+</html>
