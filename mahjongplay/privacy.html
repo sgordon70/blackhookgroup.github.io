@@ -1,0 +1,296 @@
+<title>Mahjong Play Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #fbf5ec;
+    --ink: #2a211b;
+    --ink-soft: #6b5b4e;
+    --indigo: #3a2418;
+    --amber: #d9730f;
+    --amber-ink: #b85f08;
+    --success: #4c8c6b;
+    --alert: #c1543a;
+    --line: #eadbc8;
+    --card-bg: #ffffff;
+    --font-display: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1a1410;
+      --ink: #f6ede2;
+      --ink-soft: #bfae9c;
+      --indigo: #4a3122;
+      --amber: #ff9e33;
+      --amber-ink: #ffb45c;
+      --success: #6fae8b;
+      --alert: #e2735a;
+      --line: #3a2f27;
+      --card-bg: #241c16;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1a1410;
+    --ink: #f6ede2;
+    --ink-soft: #bfae9c;
+    --indigo: #4a3122;
+    --amber: #ff9e33;
+    --amber-ink: #ffb45c;
+    --success: #6fae8b;
+    --alert: #e2735a;
+    --line: #3a2f27;
+    --card-bg: #241c16;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--amber-ink); text-decoration-color: color-mix(in srgb, var(--amber-ink) 45%, transparent); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--amber-ink); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 2.9rem);
+    line-height: 1.08;
+    margin: 18px 0 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .meta {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .summary {
+    background: var(--summary-bg);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 30px;
+    margin: 0 0 52px;
+  }
+
+  .summary h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    margin: 0 0 14px;
+    color: var(--amber-ink);
+  }
+
+  .summary ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .summary li {
+    padding-left: 1.6em;
+    position: relative;
+  }
+
+  .summary li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: var(--amber);
+  }
+
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 0 0 56px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  nav.toc a {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  nav.toc a:hover { color: var(--amber-ink); }
+
+  section {
+    margin: 0 0 46px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  section h2 .num {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--amber);
+    font-variant-numeric: tabular-nums;
+  }
+
+  section p { margin: 0 0 14px; color: var(--ink); }
+  section p:last-child { margin-bottom: 0; }
+  section .note { color: var(--ink-soft); font-size: 0.95rem; }
+
+  .pill {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--ink-soft) 16%, transparent);
+    color: var(--ink-soft);
+  }
+
+  .pill.device-only {
+    background: color-mix(in srgb, var(--amber) 18%, transparent);
+    color: var(--amber-ink);
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  footer p { margin: 0 0 8px; }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <span class="wordmark">Mahjong Play</span><br>
+      <span class="tagline">American Mah Jongg, Riichi and solitaire</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="dek">The short version: Mahjong Play doesn't collect anything. Your games, your cards and your scores stay on your device.</p>
+    <p class="meta">Last updated October 3, 2026</p>
+  </header>
+
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li><strong>Mahjong Play has no backend server.</strong> Nothing you do in the app is sent to us.</li>
+      <li>Your saved games, statistics, settings and the cards you build are stored only on your device.</li>
+      <li><strong>No accounts, no sign-in, no analytics, no advertising, and no third-party trackers of any kind.</strong></li>
+      <li>The computer opponents run entirely on your device.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="Sections">
+    <a href="#collect">What we collect</a>
+    <a href="#device">What stays on your device</a>
+    <a href="#thirdparty">Who we share data with</a>
+    <a href="#children">Children's privacy</a>
+    <a href="#changes">Changes to this policy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="collect">
+    <h2><span class="num">01</span> What we collect</h2>
+    <p>Nothing. Mahjong Play has no account system, no analytics and no advertising. We, the developer, never see your hands, your cards, your scores or anything else you do in the app.</p>
+    <p class="note">If you install a test version through Apple's TestFlight, Apple may share crash reports and any feedback you choose to send with us, as described in Apple's TestFlight terms. That is handled by Apple, not by the app.</p>
+  </section>
+
+  <section id="device">
+    <h2><span class="num">02</span> What stays on your device <span class="pill device-only">Never synced</span></h2>
+    <p>Mahjong Play remembers your saved games so you can continue later, your solitaire statistics and best times, your settings, and any cards you build for American Mah Jongg. This is stored using Apple's standard on-device app storage and never leaves your device. Deleting the app deletes it.</p>
+    <p>The card lines you enter are your own. Mahjong Play does not include or transmit any official card.</p>
+  </section>
+
+  <section id="thirdparty">
+    <h2><span class="num">03</span> Who we share data with</h2>
+    <p>Nobody. Mahjong Play doesn't use any third-party services, advertising networks or analytics platforms.</p>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">04</span> Children's privacy</h2>
+    <p>Mahjong Play collects no data from anyone, so this applies equally regardless of age.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">05</span> Changes to this policy</h2>
+    <p>If Mahjong Play's data practices ever change in a future update (for example, if online play with friends is added), this page will be updated before that version is released, and the "last updated" date above will change.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">06</span> Contact</h2>
+    <p>Questions about this policy can be sent to <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Blackhook Group LLC. This policy describes Mahjong Play's actual data handling as implemented in the app.</p>
+  </footer>
+
+</div>

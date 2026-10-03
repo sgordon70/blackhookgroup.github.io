@@ -1,0 +1,278 @@
+<title>Mahjong Play Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #fbf5ec;
+    --ink: #2a211b;
+    --ink-soft: #6b5b4e;
+    --indigo: #3a2418;
+    --amber: #d9730f;
+    --amber-ink: #b85f08;
+    --success: #4c8c6b;
+    --alert: #c1543a;
+    --line: #eadbc8;
+    --card-bg: #ffffff;
+    --font-display: "Source Serif 4", Georgia, "Iowan Old Style", serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #1a1410;
+      --ink: #f6ede2;
+      --ink-soft: #bfae9c;
+      --indigo: #4a3122;
+      --amber: #ff9e33;
+      --amber-ink: #ffb45c;
+      --success: #6fae8b;
+      --alert: #e2735a;
+      --line: #3a2f27;
+      --card-bg: #241c16;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #1a1410;
+    --ink: #f6ede2;
+    --ink-soft: #bfae9c;
+    --indigo: #4a3122;
+    --amber: #ff9e33;
+    --amber-ink: #ffb45c;
+    --success: #6fae8b;
+    --alert: #e2735a;
+    --line: #3a2f27;
+    --card-bg: #241c16;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--amber-ink); text-decoration-color: color-mix(in srgb, var(--amber-ink) 45%, transparent); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--amber-ink); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 44px;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amber-ink);
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 2.9rem);
+    line-height: 1.08;
+    margin: 18px 0 0;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 40px 0 56px;
+  }
+
+  .contact-card .label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+
+  .contact-card .email {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .contact-card a.button {
+    display: inline-block;
+    background: var(--amber);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+  }
+
+  .contact-card a.button:hover { background: var(--amber-ink); }
+
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 56px 0 20px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+
+  .faq-item:first-of-type { border-top: 1px solid var(--line); }
+
+  .faq-item h3 {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--ink);
+  }
+
+  .faq-item p {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .faq-item p + p { margin-top: 10px; }
+
+  .faq-item a { color: var(--amber-ink); }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+
+  footer p { margin: 0 0 8px; }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <span class="wordmark">Mahjong Play</span><br>
+      <span class="tagline">American Mah Jongg, Riichi and solitaire</span>
+    </div>
+    <h1>Support</h1>
+    <p class="dek">Answers to common questions, and a real person to write to if you need more.</p>
+  </header>
+
+  <div class="contact-card">
+    <div>
+      <p class="label">Email us directly</p>
+      <p class="email">hello@blackhookgroup.com</p>
+    </div>
+    <a class="button" href="mailto:hello@blackhookgroup.com">Contact Support</a>
+  </div>
+
+  <h2>American Mah Jongg</h2>
+
+  <div class="faq-item">
+    <h3>Where is this year's card?</h3>
+    <p>The official card is published every year and is not included in the app. Tap Card on the home screen, then New card, and add each line from the card you own by tapping: the size of each group, what it is and which suit. The app counts to 14 tiles for you. A practice card of made-up lines is included so you can start playing straight away.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I see how close I am to each hand?</h3>
+    <p>Tap Card at the top of the table. Every line on your card is listed with how many tiles you are away from it. Tap a line to pin it, and it stays at the top of the table while you play.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How does the Charleston work in the app?</h3>
+    <p>Tap three tiles to put them in the pass tray, then tap Pass. Jokers can never be passed. On the last pass of each Charleston you may pick one or two of your own tiles; the rest are passed on blind. After the first Charleston everyone decides whether to do a second one, then you can agree a courtesy pass of up to three tiles with the player across.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I discard?</h3>
+    <p>Tap a tile to raise it, then tap the same tile again to discard it. Tapping a different tile just changes your choice, so a single slip never throws a tile away.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How do I exchange a joker?</h3>
+    <p>On your turn, a joker in anyone's exposure glows when you hold the tile it stands for. Tap the glowing joker to swap your tile for it.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Why can't I call a tile?</h3>
+    <p>The app only lets you expose tiles if the exposure still fits a line on your card, so you can never kill your own hand by mistake. Discarded jokers can't be called by anyone.</p>
+  </div>
+
+  <h2>Playing</h2>
+
+  <div class="faq-item">
+    <h3>The tiles are too small.</h3>
+    <p>Turn your iPhone sideways for the largest tiles, or play on an iPad. Press and hold any tile to see it larger. The numbers in the corner of each tile can be turned on or off on the home screen.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I stop and finish a game later?</h3>
+    <p>Yes. Games are saved after every move. Leave the table at any time and tap Continue game on the home screen to pick up exactly where you left off.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How strong are the computer players?</h3>
+    <p>Choose from Beginner, Casual, Club, Expert and Master on the home screen before you start.</p>
+  </div>
+
+  <div class="faq-item">
+    <h3>I don't hear any sounds.</h3>
+    <p>Sounds follow your iPhone's silent switch. Turn silent mode off to hear the tiles.</p>
+  </div>
+
+  <h2>Privacy</h2>
+
+  <div class="faq-item">
+    <h3>Does Mahjong Play collect any data?</h3>
+    <p>No. There are no accounts, no analytics and no ads, and your games and cards stay on your device. Full details are in our <a href="https://blackhookgroup.com/mahjongplay/privacy.html">Privacy Policy</a>.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Blackhook Group LLC.</p>
+    <p>Still stuck? Email <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a> and we'll get back to you.</p>
+  </footer>
+
+</div>
