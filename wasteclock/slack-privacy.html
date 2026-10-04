@@ -1,4 +1,4 @@
-<title>Wasteclock Privacy Policy</title>
+<title>Wasteclock for Slack Privacy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -231,29 +231,32 @@
 
   <header class="masthead">
     <div>
-      <span class="wordmark">Wasteclock</span><br>
-      <span class="tagline">the real-time cost of a meeting</span>
+      <span class="wordmark">Wasteclock for Slack</span><br>
+      <span class="tagline">the real-time cost of a meeting, live in the channel</span>
     </div>
     <h1>Privacy Policy</h1>
-    <p class="dek">The short version: Wasteclock doesn't collect anything, because it has nowhere to send it.</p>
-    <p class="meta">Last updated September 9, 2026</p>
+    <p class="dek">The short version: the Slack app stores only what it needs to run your meeting timer, never reads your channel messages, and deletes everything when you remove it.</p>
+    <p class="meta">Last updated October 4, 2026</p>
   </header>
 
   <div class="summary">
     <h2>In short</h2>
     <ul>
-      <li><strong>Wasteclock has no backend server.</strong> There is nothing for your data to be sent to, because nothing you do in the app ever leaves your phone.</li>
-      <li>The headcount, rate, and hourly/salary setting you enter are saved locally on your device using Apple's standard on-device storage, and never uploaded anywhere.</li>
-      <li><strong>No accounts, no sign-in, no analytics, no advertising, and no third-party trackers of any kind.</strong></li>
-      <li>Wasteclock is free to try, with a one-time in-app purchase to unlock unlimited meetings. No subscriptions.</li>
-      <li>This policy covers the iPhone and Android app. Wasteclock for Slack has its own <a href="https://blackhookgroup.com/wasteclock/slack-privacy.html">privacy policy</a>.</li>
+      <li><strong>Wasteclock never reads your messages.</strong> It doesn't request any permission to read channel history, files, or member profiles.</li>
+      <li>It stores your workspace's install details, each channel's timer settings, and any agenda or decisions you type into Wasteclock itself.</li>
+      <li>Payments go through Stripe. We never see or store card numbers.</li>
+      <li><strong>Removing the app from your workspace deletes all of its data</strong> and stops your subscription from renewing.</li>
+      <li>No advertising, no analytics, no selling or sharing of data.</li>
     </ul>
   </div>
 
   <nav class="toc" aria-label="Sections">
     <a href="#collect">What we collect</a>
-    <a href="#device">What stays on your device</a>
+    <a href="#permissions">Slack permissions</a>
+    <a href="#use">How we use it</a>
     <a href="#thirdparty">Who we share data with</a>
+    <a href="#retention">Retention and deletion</a>
+    <a href="#security">Security</a>
     <a href="#children">Children's privacy</a>
     <a href="#changes">Changes to this policy</a>
     <a href="#contact">Contact</a>
@@ -261,38 +264,69 @@
 
   <section id="collect">
     <h2><span class="num">01</span> What we collect</h2>
-    <p>Nothing. Wasteclock has no account system, no network calls, and no analytics SDKs of any kind. We, the developer, never see your headcount, your rate, how long your meetings run, or anything else you do in the app.</p>
-    <p class="note">The only information involved anywhere is the standard purchase record Apple or Google keeps when you buy the unlock, used solely to confirm you bought it. We don't have access to that beyond what every developer sees in App Store Connect or the Play Console.</p>
+    <p><strong>From Slack, when you install:</strong> your workspace ID, the ID of the person who installed the app, the app's bot user ID, and the access token Slack issues so the app can post in your workspace.</p>
+    <p><strong>When you use it in a channel:</strong> the channel ID, the ID of the timer message Wasteclock posts, and the settings you enter: headcount, hourly rate or salary, and the timer's running state.</p>
+    <p><strong>Only if you type it in:</strong> a meeting agenda, and decisions logged with the "Log decision" button (the decision text and the Slack user ID of its owner).</p>
+    <p><strong>When you subscribe:</strong> a Stripe customer ID, subscription ID, subscription status, and renewal date. Your name, email, and card details are entered on Stripe's own checkout page and held by Stripe, not by us.</p>
+    <p class="note">We don't collect message contents, file contents, names, email addresses, or profile photos from Slack.</p>
   </section>
 
-  <section id="device">
-    <h2><span class="num">02</span> What stays on your device <span class="pill device-only">Never synced</span></h2>
-    <p>Wasteclock remembers your last-used headcount, rate, and hourly/salary mode so the app is pre-filled next time you open it. This is stored using Apple's standard on-device app storage (<code>UserDefaults</code>) and never leaves your phone: there's no iCloud sync, no backend, and no way for us to access it even if we wanted to.</p>
-    <p>A running meeting's elapsed time and cost are <strong>not</strong> saved at all. Closing the app always returns you to a fresh, empty setup screen.</p>
+  <section id="permissions">
+    <h2><span class="num">02</span> Slack permissions</h2>
+    <p>Wasteclock asks for these Slack scopes, and nothing else:</p>
+    <ul>
+      <li><code>commands</code>: adds the <code>/wasteclock</code> command.</li>
+      <li><code>chat:write</code> and <code>chat:write.public</code>: post and update the live cost message.</li>
+      <li><code>pins:write</code>: pin the live message so the channel can find it.</li>
+      <li><code>channels:join</code>: join a public channel when you start a timer there.</li>
+    </ul>
+  </section>
+
+  <section id="use">
+    <h2><span class="num">03</span> How we use it</h2>
+    <p>Only to run Wasteclock: keeping each channel's timer ticking, updating the live message, showing your agenda and decisions in that message, and checking whether your workspace has an active subscription. We don't use your data for advertising, profiling, or training any AI model.</p>
   </section>
 
   <section id="thirdparty">
-    <h2><span class="num">03</span> Who we share data with</h2>
-    <p>Nobody. Wasteclock doesn't use any third-party services, advertising networks, or analytics platforms. The only parties involved are Apple and Google, through their standard in-app purchase processing.</p>
+    <h2><span class="num">04</span> Who we share data with</h2>
+    <p>We don't sell or share your data. It's processed only by the services Wasteclock runs on:</p>
+    <ul>
+      <li><strong>Render</strong> (United States) hosts the app server.</li>
+      <li><strong>Neon</strong> (United States) hosts the database.</li>
+      <li><strong>Stripe</strong> processes subscription payments.</li>
+      <li><strong>Slack</strong>, which delivers commands and button clicks to the app and shows its messages.</li>
+    </ul>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">05</span> Retention and deletion</h2>
+    <p>Decisions are cleared whenever a channel's timer is reset. Everything else is kept while Wasteclock is installed.</p>
+    <p><strong>When you remove Wasteclock from your workspace</strong>, it automatically deletes your workspace's install details, access token, channel timers, agendas, and decisions, and sets any subscription to cancel at the end of the current billing period. We keep only the Stripe billing record, which payment and tax rules require.</p>
+    <p>To request deletion without uninstalling, email us at the address below and we'll do it within 30 days.</p>
+  </section>
+
+  <section id="security">
+    <h2><span class="num">06</span> Security</h2>
+    <p>All traffic between Slack, Stripe, and Wasteclock is encrypted with HTTPS, the database is encrypted at rest and accessed over TLS, and every request from Slack is checked against Slack's signing secret before it's processed.</p>
   </section>
 
   <section id="children">
-    <h2><span class="num">04</span> Children's privacy</h2>
-    <p>Wasteclock is a general business utility and isn't directed at children. Since the app collects no data from anyone, this applies equally regardless of age.</p>
+    <h2><span class="num">07</span> Children's privacy</h2>
+    <p>Wasteclock is a business tool for workplace Slack workspaces and isn't directed at children under 13.</p>
   </section>
 
   <section id="changes">
-    <h2><span class="num">05</span> Changes to this policy</h2>
-    <p>If Wasteclock's data practices ever change in a future update, this page will be updated to reflect that, and the "last updated" date above will change.</p>
+    <h2><span class="num">08</span> Changes to this policy</h2>
+    <p>If the Slack app's data handling changes, this page will be updated and the "last updated" date above will change.</p>
   </section>
 
   <section id="contact">
-    <h2><span class="num">06</span> Contact</h2>
-    <p>Questions about this policy can be sent to <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a>.</p>
+    <h2><span class="num">09</span> Contact</h2>
+    <p>Questions or deletion requests: <a href="mailto:hello@blackhookgroup.com">hello@blackhookgroup.com</a>. Wasteclock is made by Blackhook Group LLC.</p>
   </section>
 
   <footer>
-    <p>© 2026 Blackhook Group LLC. This policy describes Wasteclock's actual data handling as implemented in the app.</p>
+    <p>© 2026 Blackhook Group LLC. This policy covers Wasteclock for Slack. The iPhone and Android app has its own <a href="https://blackhookgroup.com/wasteclock/privacy.html">privacy policy</a>.</p>
   </footer>
 
 </div>
