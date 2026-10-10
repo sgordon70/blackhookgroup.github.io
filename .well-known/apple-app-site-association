@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["M6FW7DS2PS.com.blackhookgroup.bachplan"],
+        "components": [{ "/": "/bachplan/join/*", "comment": "BachPlan tap-to-join links" }]
+      }
+    ]
+  }
+}

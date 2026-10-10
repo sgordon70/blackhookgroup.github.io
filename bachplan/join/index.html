@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#B3122E">
+<meta name="apple-itunes-app" content="app-id=6821079748">
+<title>You're invited | BachPlan</title>
+<meta name="description" content="Join the bachelorette trip on BachPlan.">
+<meta name="robots" content="noindex">
+<style>
+:root{--paper:#FBFBF9;--ink:#111111;--soft:#55534F;--rule:#E2E2DE;--cherry:#B3122E;--cream:#EFE7D6;--gold:#F2C94C}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink)}
+body{font:16px/1.5 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;padding:32px 16px}
+main{max-width:520px;margin:0 auto}
+.poster{background:var(--cherry);border-radius:8px;padding:12px}
+.poster .frame{border:3px solid var(--cream);padding:22px 16px;text-align:center}
+.poster .top{color:var(--gold);font:800 18px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.poster .rule{border-top:4px solid var(--cream);border-bottom:1px solid var(--cream);height:8px;margin:14px 0}
+.poster .big{color:var(--cream);font:900 52px/1 "Helvetica Neue",Arial,sans-serif;text-transform:uppercase;letter-spacing:-.01em}
+.poster .band{background:linear-gradient(90deg,var(--gold) 15%,var(--cream) 85%);margin:16px -16px 0;padding:8px;font:900 22px/1 Georgia,serif;text-transform:uppercase;color:#1A1715}
+h1{font:900 34px/1.05 "Helvetica Neue",Arial,sans-serif;text-transform:uppercase;margin:28px 0 8px}
+p{margin-bottom:12px;color:var(--soft)}
+.code{background:#fff;border:1.5px solid var(--ink);border-radius:6px;padding:14px;margin:8px 0 18px;font:900 38px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.12em;text-align:center}
+.btn{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:17px;padding:15px;border-radius:6px;margin-bottom:10px}
+.primary{background:var(--cherry);color:#fff}
+.secondary{border:1.5px solid var(--ink);color:var(--ink)}
+.steps{border-top:1px solid var(--rule);margin-top:22px;padding-top:14px}
+.steps li{margin:0 0 8px 20px;color:var(--ink)}
+.foot{margin-top:32px;border-top:1px solid var(--rule);padding-top:14px;color:var(--soft);font-size:13px}
+.foot a{color:var(--soft)}
+</style>
+</head><body><main>
+<div class="poster"><div class="frame">
+  <div class="top">BachPlan</div>
+  <div class="rule"></div>
+  <div class="big">You're invited</div>
+  <div class="band">Join the bach</div>
+</div></div>
+
+<h1>Get the app, then join</h1>
+<p>Your maid of honor invited you to plan the weekend in BachPlan: the plan, who owes what, the packing list and the city guide. No account needed.</p>
+
+<div id="has-code">
+  <p>Your trip code:</p>
+  <div class="code" id="code">&nbsp;</div>
+</div>
+
+<a class="btn primary" id="store" href="https://apps.apple.com/app/id6821079748">Get BachPlan</a>
+<a class="btn secondary" id="other" href="https://play.google.com/store/apps/details?id=com.blackhookgroup.bachplan">Get it on Google Play</a>
+
+<ol class="steps">
+  <li>Install BachPlan and open it.</li>
+  <li>Tap <b>Join with a code</b>.</li>
+  <li>Enter the code above and your first name.</li>
+</ol>
+<p class="steps" style="border:0;padding-top:4px">Already have the app? Tap the invite link again from your messages and it opens the trip.</p>
+
+<div class="foot">BachPlan by Blackhook Group LLC · <a href="../privacy.html">Privacy</a> · <a href="../support.html">Support</a></div>
+</main>
+<script>
+(function () {
+  var raw = new URLSearchParams(location.search).get('c') || '';
+  var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 10);
+  if (code) { document.getElementById('code').textContent = code; }
+  else { document.getElementById('has-code').style.display = 'none'; }
+  var ua = navigator.userAgent || '';
+  var apple = 'https://apps.apple.com/app/id6821079748';
+  var google = 'https://play.google.com/store/apps/details?id=com.blackhookgroup.bachplan';
+  var store = document.getElementById('store'), other = document.getElementById('other');
+  if (/Android/i.test(ua)) {
+    store.href = google; store.textContent = 'Get BachPlan on Google Play';
+    other.href = apple; other.textContent = 'On an iPhone? App Store';
+  } else {
+    store.href = apple; store.textContent = 'Get BachPlan on the App Store';
+  }
+})();
+</script>
+</body></html>

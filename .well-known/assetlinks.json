@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.blackhookgroup.bachplan",
+      "sha256_cert_fingerprints": [
+        "9F:C1:45:1C:06:F1:8D:82:2A:B3:3F:55:A5:C9:A5:CC:6B:8F:D6:3F:93:05:AB:7D:CB:EE:7B:0D:E0:A6:27:0E"
+      ]
+    }
+  }
+]
